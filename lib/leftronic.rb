@@ -11,11 +11,7 @@ class Leftronic
       "point" => data_point
     }
 
-    begin
-      return RestClient.post(@url, payload.to_json)
-    rescue => e
-      puts e.inspect
-    end
+    return RestClient.post(@url, payload.to_json)
   end #:nodoc:
 
 
