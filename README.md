@@ -1,13 +1,17 @@
+Leftronic
+=========
 A simple interface for the Leftronics dashboard
+
 Leftronics is a dashboard-as-a-service. It supports five custom data update types:
 
-leaderboard(name, entries)
-list(name, entries)
-map(name, latitude, longitude)
-number(name, number)
-text(name, title, text)
+ * leaderboard(name, entries)
+ * list(name, entries)
+ * map(name, latitude, longitude)
+ * number(name, number)
+ * text(name, title, text)
 
-Example usage:
+Example Usage
+=============
 
     require 'leftronic'
     dashboard = Leftronic.new("my-leftronic-api-key")
