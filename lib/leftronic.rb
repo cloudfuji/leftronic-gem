@@ -40,7 +40,7 @@ class Leftronic
   # Push a new leaderboard
   # Entries is a hash of the form {:key_name_1 => :value, :key_name_2 => :value}
   # Sorts by value, and then pushes the top 12
-  def leaderboard(name, entries)
+  def leaderboard(name, entries, &block)
     values = []
 
     entries.each do |hash|
@@ -53,7 +53,7 @@ class Leftronic
       if b.nil?
         a
       else
-        a["value"] <=> b["value"]
+        b["value"] <=> a["value"]
       end
     end[0..11]
 
