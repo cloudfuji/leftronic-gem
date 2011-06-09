@@ -39,24 +39,33 @@ class Leftronic
 
   # Push a new leaderboard
   # Entries is a hash of the form {:key_name_1 => :value, :key_name_2 => :value}
+  # Sorts by value, and then pushes the top 12
   def leaderboard(name, entries)
     values = []
 
     entries.each do |hash|
       hash.each_pair do |key, value|
-        values << {"name" => key, "value" => value}
+        values << {"name" => key.to_s, "value" => value}
       end
     end
 
-    puts ({"leaderboard" => values}.inspect)
+    values = values.sort do |a, b|
+      if b.nil?
+        a
+      else
+        a["value"] <=> b["value"]
+      end
+    end[0..11]
+
     push(name, {"leaderboard" => values})
   end
 
 
   # Push a list
   # Entries is simply an array
+  # Only pushes the first 12 items of the list
   def list(name, entries)
-    values = entries.collect do |item|
+    values = entries[0..11].collect do |item|
       {"listItem" => item}
     end
 
