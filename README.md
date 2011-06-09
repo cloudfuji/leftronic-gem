@@ -27,6 +27,13 @@ Example Usage
     dashboard.number("app_count", 5000)
     dashboard.text("MongoDB Server up")
 
-License
+
+TODO
+====
+
+ * Accept a block for Leftronic#leaderboard and Leftronic#list to have better control over how the top 12 get picked
+ * Change Leftronic#leaderboard entries format from [{:a => "0"}, {:b => "1"}] to {:a => "0", :b => "1"}
+
+LICENSE
 =======
 MIT
