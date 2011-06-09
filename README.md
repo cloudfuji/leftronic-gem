@@ -10,9 +10,15 @@ Leftronics is a dashboard-as-a-service. It supports five custom data update type
  * number(name, number)
  * text(name, title, text)
 
+Installation
+============
+
+    gem install leftronic
+
 Example Usage
 =============
 
+    require 'rubygems' # Not necessary in ruby 1.9.2
     require 'leftronic'
     dashboard = Leftronic.new("my-leftronic-api-key")
     dashboard.leaderboard("top_deployed", [{"engine" => 200}, {"mockr" => 15}, {"fatfreecrm" => 59}])
@@ -21,6 +27,6 @@ Example Usage
     dashboard.number("app_count", 5000)
     dashboard.text("MongoDB Server up")
 
-License:
-
+License
+=======
 MIT
